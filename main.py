@@ -1,13 +1,13 @@
-from fastapi import FastAPI
 import joblib
+from fastapi import FastAPI
 import pandas as pd
 from pydantic import BaseModel
 
 # Initialize FastAPI app
 app = FastAPI()
 
-# Load trained model
-model = joblib.load("random_forest_model.pkl")
+# Load the trained model
+model = joblib.load("random_forest_model.pkl")  # Ensure the file is in the correct directory
 
 # Define input data format
 class LoanData(BaseModel):
@@ -29,7 +29,7 @@ def predict(data: LoanData):
     prob = model.predict_proba(input_data)[0][1]  # Probability of approval
     
     # Apply new decision threshold (lower to 0.4)
-    threshold = 0.4
+    threshold = 0.35
     prediction = "Approved" if prob > threshold else "Not Approved"
 
     return {"prediction": prediction, "approval_probability": prob}
