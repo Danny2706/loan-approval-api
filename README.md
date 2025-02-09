@@ -84,7 +84,7 @@ Predict Endpoint:
 Response
 {
 "prediction": "Approved",
-"approval_probability": 0.418
+"approval_probability": 0.3624
 }
 {
 "loan_size": 25000.0,
