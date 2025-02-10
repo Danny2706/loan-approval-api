@@ -122,3 +122,5 @@ You can access the API at http://127.0.0.1:8000.
 To run the API live:
 
 https://loan-approval-api-4.onrender.com
+
+My UI Link: https://dannysloanapprovalproject.netlify.app/
